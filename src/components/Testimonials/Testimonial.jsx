@@ -15,22 +15,22 @@ const Testimonial = () => {
     {
       img: profilePic1,
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "Your attention to detail, expertise, and professionalism were evident throughout the entire project. Not only did you meet my expectations, but you exceeded them in every way. The quality of your work and your commitment to delivering on time were truly outstanding. I also appreciate your excellent communication skills. You were always responsive to my questions and open to feedback, which made the collaboration seamless and enjoyable.",
     },
     {
       img: profilePic2,
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "I recently hired a full stack web developer on Fiverr, and I am extremely impressed with the results. The developer demonstrated a deep understanding of both front-end and back-end technologies, delivering a website that not only looks visually stunning but also performs flawlessly. Their attention to detail and ability to implement complex functionalities were remarkable..",
     },
     {
       img: profilePic3,
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "Amazing service excellent work and great delivery. would recommend to others. He is very collaborative and will call or ask for any more further assistance. I would recommend this person to many different buyers for what ever work they may need.",
     },
     {
       img: profilePic4,
       review:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex officiis molestiae quod tempora laudantium, cumque error a nisi placeat quae exercitationem, maiores reiciendis! Eaque dicta minima, iure maiores dolorum sed.",
+        "Zain was excellent to work with. He took all my revisions and made my very first website exactly how I wanted it. I would recommend Zain to anyone looking to build their custom website.",
     },
   ];
 
@@ -40,8 +40,8 @@ const Testimonial = () => {
         <span>Clients always get </span>
         <span>Exceptional Work </span>
         <span>from me...</span>
-      <div className="blur t-blur1" style={{ background: "var(--purple)" }}></div>
-      <div className="blur t-blur2" style={{ background: "skyblue" }}></div>
+        <div className="blur t-blur1" style={{ background: "var(--purple)" }}></div>
+        <div className="blur t-blur2" style={{ background: "skyblue" }}></div>
 
       </div>
       <Swiper

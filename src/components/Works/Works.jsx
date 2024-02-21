@@ -7,7 +7,7 @@ import Shopify from "../../img/Shopify.png";
 import Facebook from "../../img/Facebook.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
-import {Link} from 'react-scroll'
+import { Link } from 'react-scroll'
 const Works = () => {
   // context
   const theme = useContext(themeContext);
@@ -24,16 +24,14 @@ const Works = () => {
             Works for All these
           </span>
           <span>Brands & Clients</span>
-          <spane>
-            Lorem ispum is simpley dummy text of printing of printing Lorem
-            <br />
-            ispum is simpley dummy text of printingLorem ispum is simpley dummy
-            text
-            <br />
-            y dummy text of printingLorem
-            <br />
-            ispum is simpley dummy text of printing
-          </spane>
+          <span>
+            Greetings! I am a skilled full-stack developer specializing in JavaScript/NodeJS technologies.
+            <br /> My programming abilities encompass an array of technologies,  including Html CSS JavaScript,<br /> ReactJS, jQuery, Tailwind CSS, Bootstrap, Git,<br /> MySQL, Docker-compose, NodeJS,
+            Express, and MongoDB.
+            <br />With more than 5 years of experience in website development, I can provide<br /> assistance with any requirements related to these technologies. As a committed seller,
+            <br /> I am dedicated to helping you achieve optimal results for your project. <br />Please feel free to contact me with any concerns. Thank you
+
+          </span>
           <Link to="contact" smooth={true} spy={true}>
             <button className="button s-button">Hire Me</button>
           </Link>
