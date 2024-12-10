@@ -1,0 +1,54 @@
+name: Deploy React App to S3
+
+# Trigger the workflow on push to the main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Step 2: Set up Node.js (choose the version that you use)
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Use the Node.js version your app requires
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Step 4: Build the React app
+    - name: Build React app
+      run: npm run build
+
+    # Step 5: Install AWS CLI (to interact with S3)
+    - name: Install AWS CLI
+      run: |
+        curl "https://d1vvhvl2y92vvt.cloudfront.net/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+        unzip awscliv2.zip
+        sudo ./aws/install
+
+    # Step 6: Configure AWS CLI with the secrets (AWS credentials)
+    - name: Configure AWS CLI
+      run: |
+        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws configure set region ${{ secrets.AWS_REGION }}
+
+    # Step 7: Sync the build directory with S3 (replace <your-bucket-name> with your actual S3 bucket name)
+    - name: Deploy to S3
+      run: |
+        aws s3 sync build/ s3://${{ secrets.frontend-ui-ex }} --delete --acl public-read
+
+    # Step 8: Invalidate CloudFront Cache (optional, but useful for cache invalidation)
+    - name: Invalidate CloudFront Cache (optional)
+      run: |
+        aws cloudfront create-invalidation --distribution-id <your-cloudfront-distribution-id> --paths "/*"
